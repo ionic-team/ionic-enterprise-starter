@@ -1,0 +1,16 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@env/*": ["src/environments/*"],
+      "@capacitor/*": ["__mocks__/@capacitor/*"],
+      "@ionic-enterprise/auth": ["__mocks__/@ionic-enterprise/auth.ts"]
+    },
+    "outDir": "./out-tsc/spec",
+    "types": ["jasmine"]
+  },
+  "files": ["src/test.ts", "src/polyfills.ts"],
+  "include": ["src/**/*.spec.ts", "src/**/*.d.ts"]
+}

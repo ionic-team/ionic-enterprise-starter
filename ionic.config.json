@@ -1,0 +1,7 @@
+{
+  "name": "Ionic Enterprise Starter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

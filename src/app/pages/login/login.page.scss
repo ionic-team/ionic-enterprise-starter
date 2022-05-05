@@ -1,0 +1,33 @@
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  ion-card {
+    max-width: 600px;
+    .ion-blue-bkg {
+      background-color: #176bff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 60%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .card-container {
+    ion-card {
+      .ion-blue-bkg {
+        max-height: 200px;
+      }
+      .welcome {
+        min-height: 200px;
+      }
+    }
+  }
+}

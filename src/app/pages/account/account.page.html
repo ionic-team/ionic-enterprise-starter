@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Account</ion-title>
+    <ion-buttons collapse="true" slot="end" (click)="logout()">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" name="log-out"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Account</ion-title>
+      <ion-buttons slot="end" (click)="logout()">
+        <ion-button color="primary">
+          <ion-icon slot="icon-only" name="log-out"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card *ngIf="user" class="ion-text-center">
+    <ion-card-header>
+      <ion-avatar>
+        <img src="{{ user.picture }}" />
+      </ion-avatar>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-card-title>{{ user.name}}</ion-card-title>
+      <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

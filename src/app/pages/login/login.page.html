@@ -1,0 +1,31 @@
+<ion-content>
+  <div class="card-container">
+    <ion-card>
+      <ion-row>
+        <ion-col size-md="3" size="12" class="ion-padding ion-blue-bkg">
+          <img
+            src="https://images.prismic.io/ionicframeworkcom/ac68e1d9-9887-4e5a-9820-9290d06638de_ionic+logo+white+on+blue.png"
+            alt="Ionic logo"
+            loading="lazy"
+          />
+        </ion-col>
+        <ion-col size-md="9" size="12" class="welcome">
+          <ion-card-header>
+            <ion-card-title>
+              Welcome to Ionic Enterprise Starter
+            </ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+            <ion-button (click)="login()" shape="round" color="primary">
+              Sign in
+            </ion-button>
+            <div class="ion-padding">
+              <p class="error">{{errorMessage}}</p>
+            </div>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,10 @@
+<ion-tabs (ionTabsWillChange)="onTabsWillChange($event)">
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button *ngFor="let btn of buttons" [tab]="btn.value">
+      <ion-icon
+        [name]="selectedTab === btn.value ? btn.icon : btn.icon + '-outline'"
+      ></ion-icon>
+      <ion-label>{{btn.title}}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>
