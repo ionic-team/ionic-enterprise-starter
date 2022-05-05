@@ -9,7 +9,7 @@ const isProd = process.env.ENVIRONMENT === "production" ? true : false;
 
 const nativeLogin = "entstarter://login";
 const webLogin = isProd
-  ? "https://entstarter.ionic.io/login"
+  ? "https://enterprise-starter.ionic.io/login"
   : "http://localhost:8100/login";
 
 const envConfigFile = `
