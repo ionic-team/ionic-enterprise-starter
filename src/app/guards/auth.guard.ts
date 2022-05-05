@@ -38,7 +38,6 @@ export class AuthGuard implements CanActivate {
 
   private async checkAuth() {
     const authed = await this.authService.isAuthenticated();
-    console.log(authed);
     return authed || this.routeToLogin();
   }
 
