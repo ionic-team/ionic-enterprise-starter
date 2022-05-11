@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
-import { Storage } from '@ionic/storage-angular';
-import { VaultService } from './vault.service';
-import IonicSecureStorageDriver from '@ionic-enterprise/secure-storage/driver';
 import { Capacitor } from '@capacitor/core';
+import IonicSecureStorageDriver from '@ionic-enterprise/secure-storage/driver';
+import { SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
+import { Drivers } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
+import { KeyVaultService } from './key-vault.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,18 +16,26 @@ export class StorageService {
   constructor(
     private ngStorage: Storage,
     private sqlite: SQLite,
-    private vaultService: VaultService
+    private vaultService: KeyVaultService
   ) {
+    this.storage = new Storage({
+      driverOrder: [
+        Drivers.SecureStorage,
+        Drivers.IndexedDB,
+        Drivers.LocalStorage,
+      ],
+    });
+
     this.init();
   }
 
   private async init() {
     // Obtain encryption key
-    const encryptionKey = await this.vaultService.getEncryptionKey();
+    const dbKey = await this.vaultService.getDatabaseKey();
 
     // Initialize Ionic Storage for web and basic native support
     await this.ngStorage.defineDriver(IonicSecureStorageDriver);
-    await this.ngStorage.setEncryptionKey(encryptionKey);
+    await this.ngStorage.setEncryptionKey(dbKey);
     this.storage = await this.ngStorage.create();
 
     if (Capacitor.isNativePlatform()) {
@@ -37,7 +46,7 @@ export class StorageService {
           location: 'default',
           // Key/Password used to encrypt the database
           // Strongly recommended to use Identity Vault to manage this
-          key: encryptionKey,
+          key: dbKey,
         });
 
         this.database = db;

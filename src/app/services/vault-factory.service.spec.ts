@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { VaultService } from './vault.service';
+import { VaultFactoryService } from './vault-factory.service';
 
-describe('VaultService', () => {
-  let service: VaultService;
+describe('VaultFactoryService', () => {
+  let service: VaultFactoryService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(VaultService);
+    service = TestBed.inject(VaultFactoryService);
   });
 
   it('should be created', () => {

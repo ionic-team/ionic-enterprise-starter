@@ -6,13 +6,16 @@ import {
   auth0NativeConfig,
   auth0WebConfig,
 } from '../../environments/environment';
-import { VaultService } from './vault.service';
+import { SessionVaultService } from './session-vault.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthenticationService extends IonicAuth {
-  constructor(private router: Router, private vaultService: VaultService) {
+  constructor(
+    private router: Router,
+    private vaultService: SessionVaultService
+  ) {
     // Determine whether to run on mobile or the web
     super({
       ...(Capacitor.isNativePlatform() ? auth0NativeConfig : auth0WebConfig),
@@ -21,7 +24,10 @@ export class AuthenticationService extends IonicAuth {
   }
 
   // Event fired by Auth Connect upon successful login to auth provider.
-  async onLoginSuccess() {
+  async onLoginSuccess(response) {
+    console.log(response);
+    await this.vaultService.setValue('session', response);
+    await this.vaultService.initializeUnlockMode();
     await this.router.navigate(['/']);
   }
 
@@ -31,6 +37,7 @@ export class AuthenticationService extends IonicAuth {
   }
 
   async onLogout() {
+    await this.vaultService.setUnlockMode('NeverLock');
     return await this.router.navigate(['login']);
   }
 }

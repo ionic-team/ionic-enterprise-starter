@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
   <dict>
     <key>CFBundleDevelopmentRegion</key>
@@ -25,22 +26,9 @@
     <key>CFBundleURLTypes</key>
     <array>
       <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>com.getcapacitor.capacitor</string>
         <key>CFBundleURLSchemes</key>
         <array>
           <string>capacitor</string>
-        </array>
-      </dict>
-      <dict>
-        <key>CFBundleTypeRole</key>
-        <string>Editor</string>
-        <key>CFBundleURLName</key>
-        <string>io.ionic.enterprisestarter</string>
-        <key>CFBundleURLSchemes</key>
-        <array>
           <string>entstarter</string>
         </array>
       </dict>

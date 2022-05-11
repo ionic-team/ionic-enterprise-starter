@@ -7,14 +7,14 @@ import {
 import { Capacitor } from '@capacitor/core';
 import { NavController } from '@ionic/angular';
 import { AuthenticationService } from '../services/authentication.service';
-import { VaultService } from '../services/vault.service';
+import { SessionVaultService } from '../services/session-vault.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   constructor(
-    private vaultService: VaultService,
+    private vaultService: SessionVaultService,
     private authService: AuthenticationService,
     private navCtrl: NavController
   ) {}
@@ -26,13 +26,24 @@ export class AuthGuard implements CanActivate {
     if (Capacitor.isNativePlatform()) {
       const hasSession = await this.vaultService.hasSession();
       if (hasSession) {
-        await this.vaultService.unlockVault();
-        return await this.checkAuth();
+        return this.unlock();
       } else {
         return this.routeToLogin();
       }
     } else {
       return await this.checkAuth();
+    }
+  }
+
+  private async unlock() {
+    try {
+      await this.vaultService.unlock();
+      return await this.checkAuth();
+    } catch (error) {
+      // you could alert or otherwise set an error message
+      // the most common failure is the user cancelling, so we just don't navigate
+      console.error(error);
+      return this.routeToLogin();
     }
   }
 
