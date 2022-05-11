@@ -58,3 +58,7 @@ Follow these steps along with the video above:
 ## Connect to Version Control
 
 Now that we have an app created, it is important we manage the source code. In any Enterprise, this is common practice and you are likely familiar with the options at your disposal. Throughout the tutorial we will make reference to our version control, such as in the next step and when we reach the deployment step in our app development process. We utilize GitHub in this specific example. Before moving on to the next step, quickly connect your app's source code to your version control provider of choice.
+
+## Next up
+
+With the project created and connected to version control, now it is time to register your enterprise key.

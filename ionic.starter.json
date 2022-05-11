@@ -1,0 +1,50 @@
+{
+  "name": "Ionic Enterprise Starter",
+  "baseref": "main",
+  "welcome": "Welcome to the \u001b[34m\u001b[1mIonic\u001b[22m\u001b[39m Enterprise Starter!\n\nFor more details, please see the project's README: \u001b[1mhttps://github.com/ionic-team/ionic-enterprise-starter/blob/main/README.md\u001b[22m",
+  "packageJson": {
+    "scripts": {
+      "prestart": "node ./scripts/index.js",
+      "prebuild": "ENVIRONMENT='production' node ./scripts/index.js",
+      "build": "ionic build --configuration production",
+      "build:dev": "ionic build",
+      "prebuild:dev": "node ./scripts/index.js",
+      "appflow:build": "ENVIRONMENT='production' node ./scripts/index.js && npx cap-config run appflow.yml -y && ng build --configuration production",
+      "lint": "ng lint",
+      "e2e": "ng e2e",
+      "ng": "ng",
+      "start": "ionic serve --external",
+      "test": "ng test"
+    },
+    "dependencies": {
+      "@capacitor/android": "3.4.3",
+      "@capacitor/app": "1.1.1",
+      "@capacitor/core": "3.4.3",
+      "@capacitor/haptics": "1.1.4",
+      "@capacitor/ios": "3.4.3",
+      "@capacitor/keyboard": "1.2.2",
+      "@capacitor/status-bar": "1.0.8",
+      "@ionic-enterprise/auth": "^3.9.2",
+      "@ionic-enterprise/identity-vault": "5.7.1",
+      "@ionic-enterprise/secure-storage": "^2.2.3",
+      "@ionic/storage-angular": "^3.0.6",
+      "cordova-plugin-ionic": "5.5.2",
+      "dotenv": "^16.0.0"
+    }
+  },
+  "gitignore": ["/.env", "/src/environments/environment.ts"],
+  "tsconfigJson": {
+    "paths": {
+      "@app/*": ["src/app/*"],
+      "@env/*": ["src/environments/*"]
+    }
+  },
+  "tarignore": [
+    "appflow.yml",
+    ".sourcemaps",
+    "node_modules",
+    "package-lock.json",
+    "website",
+    "www"
+  ]
+}
