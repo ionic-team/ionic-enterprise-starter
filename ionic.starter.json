@@ -39,12 +39,5 @@
       "@env/*": ["src/environments/*"]
     }
   },
-  "tarignore": [
-    "appflow.yml",
-    ".sourcemaps",
-    "node_modules",
-    "package-lock.json",
-    "website",
-    "www"
-  ]
+  "tarignore": ["node_modules", "package-lock.json", "website", "www"]
 }
