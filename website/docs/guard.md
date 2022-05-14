@@ -48,7 +48,7 @@ export class AuthGuard implements CanActivate {
 }
 ```
 
-For our purposes, we will condense the `canActivate()` return type down to just a `Promise` of a `boolean` value. Next, the `Authentication Service` is injected in order to give access to the predefined `isAuthenticated()` function. Finally, we will update the activation logic to check to see the user is authenticated or not. If they are, `true` is returned and the user will get access to the main part of the app. If they are not authenticated, logic is added to handle navigating the user back to the `Login Page` using the `NavController`. This will end up looking as follows:
+For our purposes, we will condense the `canActivate()` return type down to just a `Promise` of a `boolean` value. Next, the `AuthenticationService` is injected in order to give access to the predefined `isAuthenticated()` function. Finally, we will update the activation logic to check to see the user is authenticated or not. If they are, `true` is returned and the user will get access to the main part of the app. If they are not authenticated, logic is added to handle navigating the user back to the `LoginPage` using the `NavController`. This will end up looking as follows:
 
 ```typescript title="src/app/guards/auth.guard.ts"
 ...
@@ -66,6 +66,10 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Promise<boolean> {
+    return await this.checkAuth();
+  }
+
+  private async checkAuth() {
     const authed = await this.authService.isAuthenticated();
     return authed || this.routeToLogin();
   }
@@ -79,7 +83,7 @@ export class AuthGuard implements CanActivate {
 
 ## Using the Guard
 
-With the `Auth Guard` created, it can now be utilized in protecting the `tabs` route. This is done through updating the `canActivate` property within the initial route for `tabs`:
+With the `AuthGuard` created, it can now be utilized in protecting the `tabs` route. This is done through updating the `canActivate` property within the initial route for `tabs`:
 
 ```typescript title="src/app/tabs/tabs-routing.module.ts"
 ...
@@ -98,7 +102,7 @@ const routes: Routes = [
 ...
 ```
 
-Now you'll notice that the app routing pushes you to `Login Page` right away. This is because we never logged in with a user yet.
+Now you'll notice that the app routing pushes you to `LoginPage` right away. This is because we never logged in with a user yet.
 
 ## Next up
 

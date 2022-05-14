@@ -14,30 +14,27 @@ import { SessionVaultService } from './session-vault.service';
 export class AuthenticationService extends IonicAuth {
   constructor(
     private router: Router,
-    private vaultService: SessionVaultService
+    private sessionVault: SessionVaultService
   ) {
-    // Determine whether to run on mobile or the web
     super({
       ...(Capacitor.isNativePlatform() ? auth0NativeConfig : auth0WebConfig),
-      tokenStorageProvider: vaultService.getVault(),
+      tokenStorageProvider: sessionVault.getVault(),
     });
   }
 
-  // Event fired by Auth Connect upon successful login to auth provider.
   async onLoginSuccess(response) {
-    console.log(response);
-    await this.vaultService.setValue('session', response);
-    await this.vaultService.initializeUnlockMode();
+    await this.sessionVault.setValue('session', response);
+    await this.sessionVault.initializeUnlockMode();
     await this.router.navigate(['/']);
   }
 
   async logout() {
-    await this.vaultService.clear();
+    await this.sessionVault.clear();
     return await super.logout();
   }
 
   async onLogout() {
-    await this.vaultService.setUnlockMode('NeverLock');
+    await this.sessionVault.setUnlockMode('NeverLock');
     return await this.router.navigate(['login']);
   }
 }

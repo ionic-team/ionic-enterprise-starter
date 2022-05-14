@@ -11,9 +11,9 @@ import { UnauthInterceptor } from './interceptors/unauth-interceptor';
 import { SessionVaultService } from './services/session-vault.service';
 
 const appInitFactory =
-  (vaultService: SessionVaultService): (() => Promise<void>) =>
+  (sessionVault: SessionVaultService): (() => Promise<void>) =>
   () =>
-    vaultService.init();
+    sessionVault.init();
 
 @NgModule({
   declarations: [AppComponent],

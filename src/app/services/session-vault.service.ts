@@ -15,13 +15,6 @@ export type UnlockMode = 'Device' | 'SessionPIN' | 'NeverLock' | 'ForceLogin';
 
 const vaultConfig: IdentityVaultConfig = {
   key: 'io.ionic.enterprisestarter',
-  // type: VaultType.DeviceSecurity,
-  // deviceSecurityType: DeviceSecurityType.Both,
-  // lockAfterBackgrounded: 2000,
-  // shouldClearVaultAfterTooManyFailedAttempts: true,
-  // customPasscodeInvalidUnlockAttempts: 3,
-  // unlockVaultOnLoad: true,
-
   type: VaultType.SecureStorage,
   lockAfterBackgrounded: 2000,
   shouldClearVaultAfterTooManyFailedAttempts: true,
@@ -45,10 +38,6 @@ export class SessionVaultService {
 
     this.vault.onLock(() => this.lockedSubject.next(true));
     this.vault.onUnlock(() => this.lockedSubject.next(false));
-
-    // if (Capacitor.isNativePlatform()) {
-    //   await Device.setHideScreenOnBackground(true);
-    // }
   }
 
   // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -133,9 +122,5 @@ export class SessionVaultService {
       type,
       deviceSecurityType,
     });
-  }
-
-  private async set(key: string, value: string): Promise<void> {
-    await this.vault.setValue(key, value);
   }
 }

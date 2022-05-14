@@ -30,7 +30,7 @@ In order to use key/value storage in our app as well, we first need to install l
 npm install @ionic/storage-angular
 ```
 
-With that installed, we need to import the `IonicStorageModule` and then inject the Storage class. For our example, we will import `IonicStorageModule` within the `AppModule` for use across the whole app, however it can be more granularly imported.
+<!-- With that installed, we need to import the `IonicStorageModule` and then inject the Storage class. For our example, we will import `IonicStorageModule` within the `AppModule` for use across the whole app, however it can be more granularly imported.
 
 ```typescript title="src/app/app.module.ts"
 ...
@@ -50,7 +50,7 @@ import { IonicStorageModule } from '@ionic/storage-angular';
   // ...
 })
 export class AppModule { }
-```
+``` -->
 
 ## Creating a Storage Service
 
@@ -62,7 +62,7 @@ First, we generate the service:
 ionic g service services/storage
 ```
 
-In the newly created service, we will add logic to support storage natively on iOS and Android, as well as support for storage on the web and simple use cases.
+In the newly created service, we first initial the `storage` object and specify the order in which we prefer to use the storage drivers. Next, we will add logic to support storage natively on iOS and Android, as well as support for storage on the web and simple use cases.
 
 ```typescript title="src/app/services/storage.service.ts"
 import { Injectable } from "@angular/core";
@@ -81,15 +81,22 @@ export class StorageService {
   constructor(
     private ngStorage: Storage,
     private sqlite: SQLite,
-    private vaultService: VaultService
+    private keyVault: KeyVaultService
   ) {
+    this.storage = new Storage({
+      driverOrder: [
+        Drivers.SecureStorage,
+        Drivers.IndexedDB,
+        Drivers.LocalStorage,
+      ],
+    });
+
     this.init();
   }
 
   private async init() {
     // Initialize Ionic Storage for web and basic native support
     await this.ngStorage.defineDriver(IonicSecureStorageDriver);
-    await this.ngStorage.setEncryptionKey(encryptionKey);
     this.storage = await this.ngStorage.create();
 
     if (Capacitor.isNativePlatform()) {
@@ -120,4 +127,4 @@ export class StorageService {
 
 ## Next up
 
-In order to ensure your app's data is as secure as possible, it is best to also encrypt it. We will go ahead now and add an extra layer of protection for your users.
+To ensure your app's data is as secure as possible, it is best to also use encryption. We will now go ahead and add an extra layer of protection for your users.

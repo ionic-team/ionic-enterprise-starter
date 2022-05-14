@@ -16,7 +16,7 @@ export class StorageService {
   constructor(
     private ngStorage: Storage,
     private sqlite: SQLite,
-    private vaultService: KeyVaultService
+    private keyVault: KeyVaultService
   ) {
     this.storage = new Storage({
       driverOrder: [
@@ -31,7 +31,7 @@ export class StorageService {
 
   private async init() {
     // Obtain encryption key
-    const dbKey = await this.vaultService.getDatabaseKey();
+    const dbKey = await this.keyVault.getDatabaseKey();
 
     // Initialize Ionic Storage for web and basic native support
     await this.ngStorage.defineDriver(IonicSecureStorageDriver);

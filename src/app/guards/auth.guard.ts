@@ -14,7 +14,7 @@ import { SessionVaultService } from '../services/session-vault.service';
 })
 export class AuthGuard implements CanActivate {
   constructor(
-    private vaultService: SessionVaultService,
+    private sessionVault: SessionVaultService,
     private authService: AuthenticationService,
     private navCtrl: NavController
   ) {}
@@ -24,7 +24,7 @@ export class AuthGuard implements CanActivate {
     state: RouterStateSnapshot
   ): Promise<boolean> {
     if (Capacitor.isNativePlatform()) {
-      const hasSession = await this.vaultService.hasSession();
+      const hasSession = await this.sessionVault.hasSession();
       if (hasSession) {
         return this.unlock();
       } else {
@@ -37,7 +37,7 @@ export class AuthGuard implements CanActivate {
 
   private async unlock() {
     try {
-      await this.vaultService.unlock();
+      await this.sessionVault.unlock();
       return await this.checkAuth();
     } catch (error) {
       // you could alert or otherwise set an error message

@@ -180,4 +180,4 @@ export class AuthenticationService extends IonicAuth {
 
 ## Next up
 
-With authentication configs setup, we're ready to create our `Login Page`.
+With authentication configs setup, we're ready to create our `LoginPage`.

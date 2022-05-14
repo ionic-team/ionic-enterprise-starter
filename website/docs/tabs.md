@@ -235,4 +235,4 @@ With the `user` object populated on initialization of the `AccountPage`, we will
 
 ## Next up
 
-Given the current implementation of the `LoginPage` and `Account Page` within our main `tabs`, we can now look to create a `guard` around the main app. Let's make the first of the security improvements!
+Given the current implementation of the `LoginPage` and `AccountPage` within our main `tabs`, we can now look to create a `guard` around the main app. Let's make the first of the security improvements!
