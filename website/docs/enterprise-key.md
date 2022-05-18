@@ -5,6 +5,14 @@ sidebar_position: 3
 
 # Register Enterprise Key
 
+<iframe
+  src="https://www.loom.com/embed/7f7ba613ebfd4ba7a38e53b875508d9a"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 Previously, you went ahead and registered for an Enterprise product key which is now available in the [Ionic Hub](https://dashboard.ionicframework.com/). We can work to assign that key to your newly created app.
 
 ## Import your App

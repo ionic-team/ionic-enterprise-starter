@@ -5,7 +5,13 @@ sidebar_position: 5
 
 # Add a Login Page
 
-~_Insert Video of creating Login Page_~
+<iframe
+  src="https://www.loom.com/embed/416c0a482d7c470da9d921d82edd8b06"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 After the tabs-based foundation is created, we can start our journey by creating a login page. This login page will also be responsive so it will be presentable both on desktop and mobile viewports. Eventually, we will implement an authentication guard around the main application, so a user must be logged-in to see the rest of the application.
 
@@ -63,6 +69,14 @@ Since the `/login` route isn't where your app's router navigates to from the beg
 <img src={require('@site/static/img/tutorial/responsive-login.png').default} />
 
 ## Plumb up the Login button
+
+<iframe
+  src="https://www.loom.com/embed/d8159e45a03f43e48521c7892786a8c6"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 With the start of our `AuthenticationService`, we can put the "plumbing" in place to get the sign-in button to work:
 
@@ -124,6 +138,14 @@ For additional safety measures we have added a `try/catch`, ensuring any errors 
 Rounding out the login flow, we can update the `ngOnInit()` to include instructions for when our app user gets pushed back to the app from the implicit web login flow. When they successfully authenticate, the callback parameters are passed on the URL after a hash (#). Thus, we can look for this hash and tell our `AuthenticationService` what we want to do next. In the next section, we'll show this using the `onLoginSuccess()` function.
 
 ## Update Authentication Service
+
+<iframe
+  src="https://www.loom.com/embed/59420b80c50b47a4aeaecc23755f9aac"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 When the user successfully authenticates with the auth provider, we need to navigate them to the appropriate landing spot within the application. To do this, we will update the `AuthenticationService` to include routing logic within the `onLoginSuccess()` function, which is inherited through the parent class and be implemented.
 

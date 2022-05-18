@@ -13,6 +13,14 @@ We will soon talk about configuring Identity Vault into your application, but fi
 
 ## Install Auth Connect
 
+<iframe
+  src="https://www.loom.com/embed/10790aa4f4324d648a07c020a54bfc65"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 First, you need to have Auth Connect installed. This will use the Enterprise Native Key you added to your app in the last step. To do this you can issue the following command:
 
 ```bash
@@ -44,6 +52,14 @@ More information on these commands can be found by visiting the [Ionic CLI docs]
 
 ## Update Auth Scheme
 
+<iframe
+  src="https://www.loom.com/embed/e50c4dd3f4914d73a02eed1240b89fc8"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 Once the above is settled, the `Android Manifest` in your project needs a tweak. You will need to add the following intents next to the other intents in the main activity node:
 
 ```xml title="android/app/src/main/AndroidManifest.xml"
@@ -61,20 +77,31 @@ Once the above is settled, the `Android Manifest` in your project needs a tweak.
 </intent-filter>
 ```
 
-iOS will need a slight adjustment too. Go ahead and update the exisiting `CFBundleURLTypes` node in `Info.plist` with the following:
+iOS will need a slight adjustment too. Go ahead and add and/or update the `CFBundleURLTypes` node in `Info.plist` with the following:
 
 ```xml title="ios/App/App/Info.plist"
-<dict>
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-        <string>$AUTH_URL_SCHEME</string>
+      <string>$AUTH_URL_SCHEME</string>
     </array>
-</dict>
+  </dict>
+</array>
 ```
 
 `$AUTH_URL_SCHEME` can then be replaced by the bundle id of your app in both projects. If needed, you can find more information on this process in the [Auth Connect Installation Guide](https://ionic.io/docs/auth-connect/install#installation).
 
 ## Create an App on Auth0
+
+<iframe
+  src="https://www.loom.com/embed/de0f042f2d224252b9a025ab8d3db93d"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 Alright, now it is time to get our auth provider set up to be used within our app. Head on over to [auth0.com](https://auth0.com/) and create an account if you don not have one already. Once you are logged in, you can head to their Applications section where you can choose to `Create Application`. Give the app a name and choose the `Native` application type.
 
@@ -90,7 +117,15 @@ With Auth0 set up, we can bring the configuration properties over to our app.
 
 ## Setup Auth Configs in the App
 
-To untilize our Auth0 configs, we need an Authentication Service and an update to Angular's environment files. To generate a new Authentication service we can run the following:
+<iframe
+  src="https://www.loom.com/embed/afbf062ecdba4418a0765858a56dfcaa"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
+To utilize our Auth0 configs, we need an Authentication Service and an update to Angular's environment files. To generate a new Authentication service we can run the following:
 
 ```bash
 ionic g service services/authentication

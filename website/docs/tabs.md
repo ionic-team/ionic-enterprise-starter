@@ -11,6 +11,14 @@ When the app was generated using the VSCode extension and the `tabs` starter tem
 
 ## Create New Tabs
 
+<iframe
+  src="https://www.loom.com/embed/4b333b22cb0f43c1a05282b25d59bbdb"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 In this example, let's create the new pages and update the default setup. To start we will issue a few commands to get the new pages generated:
 
 ```bash
@@ -107,6 +115,14 @@ With those changes made, the default tab folders/files that were generated in th
 
 ## Configure Account Page
 
+<iframe
+  src="https://www.loom.com/embed/c28678aaead74da78ae017f4c064e992"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 The `AccountPage` is what will show the logged in user's information, as well as house the ability to log out. We can quickly add some logic to initialize the `user` object via the `AuthenticationService`:
 
 ```typescript title="src/app/pages/account/account.page.ts"
@@ -155,6 +171,14 @@ async logout() {
 
 ## Update Authentication Service
 
+<iframe
+  src="https://www.loom.com/embed/33fe6aa8d0ac490aa37d354b31644575"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 With the `AccountPage` logic updated, the `AuthenticationService` needs to be amended:
 
 ```typescript title="src/app/services/authentication.service.ts"
@@ -166,6 +190,8 @@ export class AuthenticationService extends IonicAuth {
   constructor(private router: Router) {
     super(Capacitor.isNativePlatform() ? nativeAuthOptions : webAuthOptions);
   }
+
+  ...
 
   async onLogout() {
     return await this.router.navigate(['login']);
