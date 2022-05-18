@@ -5,6 +5,14 @@ sidebar_position: 12
 
 # Deploying Your App with Appflow
 
+<iframe
+  src="https://www.loom.com/embed/17b7e3480c4f4f49947ba2325a017f58"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 With your newly minted enterprise application, it is time to get it in your user's hands. The best way to do that is using [Appflow](https://ionic.io/appflow). Appflow is a continuous integration (CI) and continuous deployment (CD) platform for Ionic development teams. The platform helps development teams continuously build and ship their apps faster than ever!
 
 Let's walk through the steps together.
