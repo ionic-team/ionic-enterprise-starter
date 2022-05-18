@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Create a Tab-based App"
-sidebar_position: 2
 ---
 
 # Create a Tab-based App

@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Add a Login Page"
-sidebar_position: 5
 ---
 
 # Add a Login Page

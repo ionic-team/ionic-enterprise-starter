@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Setup App Tabs"
-sidebar_position: 6
 ---
 
 # Setup App Tabs

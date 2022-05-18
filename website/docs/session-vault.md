@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Session Vault"
-sidebar_position: 10
 ---
 
 # Creating the Session Vault

@@ -1,6 +1,5 @@
 ---
 sidebar_label: "SSO with Auth Connect"
-sidebar_position: 4
 ---
 
 # Single sign-on with Auth Connect

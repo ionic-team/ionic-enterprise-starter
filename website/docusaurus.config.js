@@ -6,8 +6,9 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
+  title: "Ionic Enterprise Starter",
+  tagline:
+    "The foundation for your next enterprise cross-platform application.",
   url: "https://your-docusaurus-test-site.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
@@ -23,16 +24,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/",
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        // },
+        blog: false,
+        pages: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -62,7 +58,7 @@ const config = {
           //   href: "https://github.com/facebook/docusaurus",
           //   label: "GitHub",
           //   position: "right",
-          // },
+          // }
         ],
       },
       // footer: {

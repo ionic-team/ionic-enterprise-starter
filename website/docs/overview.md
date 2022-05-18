@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Overview"
-sidebar_position: 1
 ---
 
 # Building Your First Ionic Enterprise Application
@@ -25,7 +24,7 @@ The purpose of this guide is to walk through a step-by-step process of building 
   height="315"
 ></iframe>
 
-For this guide to work, you will need to have a Native Plugin Key. If you do not have a key already, you can quickly acquire one through a [free 14-day trial](#)! With that settled you will have access to:
+For this guide to work, you will need to have a Native Plugin Key. If you do not have a key already, you can quickly acquire one through a [free 14-day trial](https://ionicframework.com/login?response_type=token&scope=openid+profile+email&client_id=dash&nonce=rdplxtyyv9j&state=y30a5b3clhr&redirect_uri=https%3A%2F%2Fdashboard.ionicframework.com%2Flogin)! With that settled you will have access to:
 
 - [Auth Connect](https://ionic.io/docs/auth-connect): Add Single Sign-on using a variety of services including Auth0, AWS Cognito, Azure AD B2C, or any OpenId Connect provider.
 - [Identity Vault](https://ionic.io/docs/identity-vault): Secure user identity and session tokens through encryption at-rest, unlocked only by biometric identity (FaceID/TouchID).

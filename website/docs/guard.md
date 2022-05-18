@@ -1,6 +1,5 @@
 ---
 sidebar_label: "Gating the App"
-sidebar_position: 7
 ---
 
 # Gating the App
