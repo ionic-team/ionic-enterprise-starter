@@ -11,6 +11,14 @@ The Vault manages secure user identity and session tokens, ensuring sensitive da
 
 ## Installing Identity Vault
 
+<iframe
+  src="https://www.loom.com/embed/8e54e56f66714351990ab1c939203024"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 Identity Vault is added to your app in the same fashion as Auth Connect and Secure Storage:
 
 ```bash
@@ -30,6 +38,14 @@ Given our usage of Capacitor with this example as well, we will also need to upd
 For Android SDK 30+, this is configured in the build.gradle file for Capacitor. Capacitor 2 and above is supported. If using Capacitor 3, ensure Capacitor dependencies are >=3.0.2.
 
 ## Creating Key and Vault Services
+
+<iframe
+  src="https://www.loom.com/embed/0a39546bbaf446f4b52f0fd90cda2389"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 Similarly to using Auth Connect and Secure Storage, we can create a few services that define multiple vaults, assist in creating each vault, and provide storage keys:
 
@@ -63,12 +79,6 @@ export class VaultFactoryService {
 }
 
 ```
-
-<!-- Within this newly created `KeyVaultService` we will need to use an encryption key. The logic to generate this key will be abstracted out into its own `KeyService`. This is generated as follows:
-
-```bash
-ionic g service services/key
-``` -->
 
 Note that we are using the `BrowserVault` class when the application is running on the web. The `BrowserVault` allows us to continue to use our normal web-based development workflow. Again, `Capacitor` was used to here to determine which type of device the app is running on and configure the vault appropriately.
 
@@ -153,6 +163,14 @@ export class VaultService {
 
 ### Create the Key Vault
 
+<iframe
+  src="https://www.loom.com/embed/ae5f216a16e8481ab27c00ecad01ce89"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 With the vault config defined, and a storage key that will be used to identity the data we need to grab from the vault, we can create the remainder of the key vault. The all encompassing result will look as follows:
 
 ```typescript title="src/app/services/key-vault.service.ts"
@@ -191,6 +209,14 @@ export class KeyVaultService {
 ```
 
 ## Secure Storage with Encryption
+
+<iframe
+  src="https://www.loom.com/embed/37477397bef34cc79c7874ccec566c8f"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 Bringing encryption full-circle, we can now utilize the `KeyVaultService` to upgrade the app's storage with an appropriately encrypted database key:
 

@@ -9,6 +9,14 @@ In any Enterprise application, users are bound to perform transactions to store 
 
 Ionic Secure Storage is a cross-platform local database system for high performance, secure data storage on iOS and Android. It provides full SQL query and relational data support through [SQLite](https://www.sqlite.org/index.html), as well as key/value support for simpler use cases when used with the [Ionic Storage](https://github.com/ionic-team/ionic-storage) utility library. Full encryption support (using 256-bit AES) is provided out of the box for security sensitive applications.
 
+<iframe
+  src="https://www.loom.com/embed/ecd290e065aa42db8bbffc06cf1a5677"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 ## Installing Secure Storage
 
 Just as Auth Connect was installed, we will perform a similar command to get Secure Storage installed and sync'ed with the native app properties:
@@ -30,28 +38,6 @@ In order to use key/value storage in our app as well, we first need to install l
 npm install @ionic/storage-angular
 ```
 
-<!-- With that installed, we need to import the `IonicStorageModule` and then inject the Storage class. For our example, we will import `IonicStorageModule` within the `AppModule` for use across the whole app, however it can be more granularly imported.
-
-```typescript title="src/app/app.module.ts"
-...
-import { Drivers } from '@ionic/storage';
-import { IonicStorageModule } from '@ionic/storage-angular';
-
-@NgModule({
-  declarations: [
-    ...
-  ],
-  imports: [
-    ...
-    IonicStorageModule.forRoot({
-      driverOrder: [Drivers.SecureStorage, Drivers.IndexedDB, Drivers.LocalStorage]
-    })
-  ],
-  // ...
-})
-export class AppModule { }
-``` -->
-
 ## Creating a Storage Service
 
 After making Secure Storage available to the application, including key/value support, we will setup a service to handle our storage logic.
@@ -62,14 +48,23 @@ First, we generate the service:
 ionic g service services/storage
 ```
 
+<iframe
+  src="https://www.loom.com/embed/66d11da5d7d4471b82f88df02f3cd03f"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 In the newly created service, we first initial the `storage` object and specify the order in which we prefer to use the storage drivers. Next, we will add logic to support storage natively on iOS and Android, as well as support for storage on the web and simple use cases.
 
 ```typescript title="src/app/services/storage.service.ts"
 import { Injectable } from "@angular/core";
-import { SQLite, SQLiteObject } from "@ionic-enterprise/secure-storage/ngx";
-import { Storage } from "@ionic/storage-angular";
-import IonicSecureStorageDriver from "@ionic-enterprise/secure-storage/driver";
 import { Capacitor } from "@capacitor/core";
+import IonicSecureStorageDriver from "@ionic-enterprise/secure-storage/driver";
+import { SQLite, SQLiteObject } from "@ionic-enterprise/secure-storage/ngx";
+import { Drivers } from "@ionic/storage";
+import { Storage } from "@ionic/storage-angular";
 
 @Injectable({
   providedIn: "root",
@@ -78,11 +73,7 @@ export class StorageService {
   private storage: Storage;
   private database: SQLiteObject;
 
-  constructor(
-    private ngStorage: Storage,
-    private sqlite: SQLite,
-    private keyVault: KeyVaultService
-  ) {
+  constructor(private ngStorage: Storage, private sqlite: SQLite) {
     this.storage = new Storage({
       driverOrder: [
         Drivers.SecureStorage,

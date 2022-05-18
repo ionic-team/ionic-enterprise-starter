@@ -9,7 +9,7 @@ The purpose of the `KeyVaultService` is purely to utilize `SecureStorage` to hou
 
 ## Define Key Vault Configuration
 
-Again, we first need to define a configuration for the vault. The `key` for vault will be slightly different that the `KeyVaultService` used. The other properties provide additional configuration for how this particular vault may behave:
+Again, we first need to define a configuration for the vault. The `key` for vault will be slightly different than the `KeyVaultService` used. The other properties provide additional configuration for how this particular vault may behave:
 
 ```typescript title="src/app/services/session-vault.service.ts"
 ...
@@ -30,6 +30,14 @@ export class SessionVaultService {
 ```
 
 You will notice that the `SessionVaultService` also starts out with the type of `SecureStorage`. This is due to the fact that we do not want the initial configuration to fail if the user's device does not have security set up.
+
+<iframe
+  src="https://www.loom.com/embed/a0094161d06743dd8c424f8f02976256"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 ## Initialize the Vault
 
@@ -52,7 +60,7 @@ const appInitFactory =
     {
       provide: APP_INITIALIZER,
       useFactory: appInitFactory,
-      deps: [VaultService],
+      deps: [SessionVaultService],
       multi: true,
     },
   ],
@@ -60,6 +68,14 @@ const appInitFactory =
 })
 export class AppModule {}
 ```
+
+<iframe
+  src="https://www.loom.com/embed/0083b37ecb9c4d5b97e092b7d4ad08a7"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 Since the `APP_INITIALIZER` is a `Promise` and needs to call a public function within the `SessionVaultService`, a separate `init()` function was created. This will tranform the `SessionVaultService` initialization to look as follows:
 

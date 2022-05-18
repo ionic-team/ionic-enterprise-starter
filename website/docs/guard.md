@@ -9,6 +9,14 @@ Our authentication process in great and all, but it does us no good if users can
 
 ## Create the Guard
 
+<iframe
+  src="https://www.loom.com/embed/703d828d1bc54478a088c306d3166968"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 Once again we can run a command to create the appropriate file in the project structure:
 
 ```bash
@@ -82,6 +90,14 @@ export class AuthGuard implements CanActivate {
 ```
 
 ## Using the Guard
+
+<iframe
+  src="https://www.loom.com/embed/8b606ed961a94e0c93bcdb7cd8d64343"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 With the `AuthGuard` created, it can now be utilized in protecting the `tabs` route. This is done through updating the `canActivate` property within the initial route for `tabs`:
 
