@@ -7,6 +7,14 @@ sidebar_position: 11
 
 Now that the application allows a user to login through a third-party authentication service and have their session data securely stored with added encryption, some final touches can be put on the `AuthenticationService` to round out it's functionality.
 
+<iframe
+  src="https://www.loom.com/embed/8564f3748c91480480e5e141b75f4a65"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 ## Reconfigure Constructor
 
 With the `SessionVaultService` implemented, additional updates are required within the `AuthenticationService`. For starters, the `constructor()` needs to pass configuration updates to it's parent now that session vault is serving as the `tokenStorageProvider`. This means the `SessionVaultService` needs to be injected:

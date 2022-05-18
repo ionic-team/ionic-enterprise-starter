@@ -103,62 +103,84 @@ With that, the session vault is in place and properly initialized when the app b
 
 ## Update Session Vault's Unlock Mode
 
+<iframe
+  src="https://www.loom.com/embed/491ac6491182485ba87a99c77765454d"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
+
 As previously mentioned, we started the `SessionVaultService` out by using the `SecureStorage` `type` property. However, what we need to do is update both the `type` and `deviceSecurityType` after the user successfully logs in. This is to ensure we are adding as much security to the vault as we can. This involves calling an `initializeUnlockMode` function upon successful login and modify the vault's config.
 
 ```typescript title="src/app/services/session-vault.service.ts"
 ...
 
-public async initializeUnlockMode() {
-  if (Capacitor.isNativePlatform()) {
-    if (await Device.isSystemPasscodeSet()) {
-      await this.setUnlockMode('Device');
-    } else {
-      await this.setUnlockMode('SessionPIN');
-    }
-  }
-}
-
-public setUnlockMode(unlockMode: UnlockMode): Promise<void> {
-  let type: VaultType;
-  let deviceSecurityType: DeviceSecurityType;
-
-  switch (unlockMode) {
-    case 'Device':
-      type = VaultType.DeviceSecurity;
-      deviceSecurityType = DeviceSecurityType.Both;
-      break;
-
-    case 'SessionPIN':
-      type = VaultType.CustomPasscode;
-      deviceSecurityType = DeviceSecurityType.None;
-      break;
-
-    case 'ForceLogin':
-      type = VaultType.InMemory;
-      deviceSecurityType = DeviceSecurityType.None;
-      break;
-
-    case 'NeverLock':
-      type = VaultType.SecureStorage;
-      deviceSecurityType = DeviceSecurityType.None;
-      break;
-
-    default:
-      type = VaultType.SecureStorage;
-      deviceSecurityType = DeviceSecurityType.None;
-  }
-
-  return this.vault.updateConfig({
-    ...this.vault.config,
-    type,
-    deviceSecurityType,
-  });
-}
+export type UnlockMode = 'Device' | 'SessionPIN' | 'NeverLock' | 'ForceLogin';
 
 ...
+
+export class SessionVaultService {
+  ...
+
+  public async initializeUnlockMode() {
+    if (Capacitor.isNativePlatform()) {
+      if (await Device.isSystemPasscodeSet()) {
+        await this.setUnlockMode('Device');
+      } else {
+        await this.setUnlockMode('SessionPIN');
+      }
+    }
+  }
+
+  public setUnlockMode(unlockMode: UnlockMode): Promise<void> {
+    let type: VaultType;
+    let deviceSecurityType: DeviceSecurityType;
+
+    switch (unlockMode) {
+      case 'Device':
+        type = VaultType.DeviceSecurity;
+        deviceSecurityType = DeviceSecurityType.Both;
+        break;
+
+      case 'SessionPIN':
+        type = VaultType.CustomPasscode;
+        deviceSecurityType = DeviceSecurityType.None;
+        break;
+
+      case 'ForceLogin':
+        type = VaultType.InMemory;
+        deviceSecurityType = DeviceSecurityType.None;
+        break;
+
+      case 'NeverLock':
+        type = VaultType.SecureStorage;
+        deviceSecurityType = DeviceSecurityType.None;
+        break;
+
+      default:
+        type = VaultType.SecureStorage;
+        deviceSecurityType = DeviceSecurityType.None;
+    }
+
+    return this.vault.updateConfig({
+      ...this.vault.config,
+      type,
+      deviceSecurityType,
+    });
+  }
+}
 ```
 
 ## Define Helper Vault Functions
+
+<iframe
+  src="https://www.loom.com/embed/4f3f903db1844180a6a039aafee5de90"
+  frameborder="0"
+  allowfullscreen
+  width="560"
+  height="315"
+></iframe>
 
 The `SessionVaultService` will be used to store the logged in user's data and will require helper functions to perform tasks throughout the application. As such, we will update the `SessionVaultService` to include those functions we will need throughout further development and use of the application:
 
@@ -166,40 +188,40 @@ The `SessionVaultService` will be used to store the logged in user's data and wi
 ...
 
 public get locked() {
-    return this.lockedSubject.asObservable();
-  }
+  return this.lockedSubject.asObservable();
+}
 
-  public getVault() {
-    return this.vault;
-  }
+public getVault() {
+  return this.vault;
+}
 
-  public async hasSession() {
-    return !(await this.vault.isEmpty());
-  }
+public async hasSession() {
+  return !(await this.vault.isEmpty());
+}
 
-  public async clear() {
-    return this.vault.clear();
-  }
+public async clear() {
+  return this.vault.clear();
+}
 
-  public async lock() {
-    return this.vault.lock();
-  }
+public async lock() {
+  return this.vault.lock();
+}
 
-  public async unlock() {
-    return this.vault.unlock();
-  }
+public async unlock() {
+  return this.vault.unlock();
+}
 
-  public async canUnlock(): Promise<boolean> {
-    return (await this.hasSession()) && (await this.vault.isLocked());
-  }
+public async canUnlock(): Promise<boolean> {
+  return (await this.hasSession()) && (await this.vault.isLocked());
+}
 
-  getValue(key: string): Promise<any> {
-    return this.vault.getValue(key);
-  }
+getValue(key: string): Promise<any> {
+  return this.vault.getValue(key);
+}
 
-  setValue(key: string, value: any): Promise<void> {
-    return this.vault.setValue(key, value);
-  }
+setValue(key: string, value: any): Promise<void> {
+  return this.vault.setValue(key, value);
+}
 
 ...
 ```
