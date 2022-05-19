@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Encrypting App Data"
+sidebar_position: 9
 ---
 
 # Encrypting Your App's Data

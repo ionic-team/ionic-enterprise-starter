@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Deploy Your App"
+sidebar_position: 12
 ---
 
 # Deploying Your App with Appflow

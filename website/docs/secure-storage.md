@@ -1,5 +1,6 @@
 ---
 sidebar_label: "Securing App Data"
+sidebar_position: 8
 ---
 
 # Securing Your App's Data
