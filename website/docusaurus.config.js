@@ -6,9 +6,10 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
+  title: "Ionic Enterprise Starter",
+  tagline:
+    "The foundation for your next enterprise cross-platform application.",
+  url: "https://ionic.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -25,7 +26,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
+            "https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/",
         },
         // blog: {
         //   showReadingTime: true,
