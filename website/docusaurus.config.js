@@ -10,6 +10,7 @@ const config = {
   tagline:
     "The foundation for your next enterprise cross-platform application.",
   url: "https://ionic.io",
+  trailingSlash: false,
   baseUrl: "/docs/enterprise-starter/",
   baseUrlIssueBanner: false,
   onBrokenLinks: "throw",
@@ -109,6 +110,7 @@ const config = {
       "@docusaurus/preset-classic",
       {
         docs: {
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
