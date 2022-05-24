@@ -1,5 +1,5 @@
 ---
-sidebar_label: "SSO with Auth Connect"
+sidebar_label: 'SSO with Auth Connect'
 sidebar_position: 4
 ---
 
@@ -134,8 +134,8 @@ ionic g service services/authentication
 The newly created `AuthenticationService` class should be extended to utilize `IonicAuth` which handles much of the authentication logic behind the scenes. This new service will utilize our configs we will setup in the `environment.ts` file:
 
 ```typescript title="src/app/services/authentication.service.ts"
-import { IonicAuth } from "@ionic-enterprise/auth";
-import { authOptions } from "../../environments/environment";
+import { IonicAuth } from '@ionic-enterprise/auth';
+import { authOptions } from '../../environments/environment';
 
 export class AuthenticationService extends IonicAuth {
   constructor() {
@@ -147,17 +147,17 @@ export class AuthenticationService extends IonicAuth {
 The `authOptions` inside of `environments.ts` will take a form similar to the following:
 
 ```typescript title="src/environments/environment.ts"
-import { IonicAuthOptions } from "@ionic-enterprise/auth";
+import { IonicAuthOptions } from '@ionic-enterprise/auth';
 
 export const authOptions: IonicAuthOptions = {
-  authConfig: "FILL_IN",
-  platform: "FILL_IN",
-  clientID: "FILL_IN",
-  discoveryUrl: "FILL_IN",
-  redirectUri: "FILL_IN",
-  scope: "FILL_IN",
-  logoutUrl: "FILL_IN",
-  iosWebView: "FILL_IN",
+  authConfig: 'FILL_IN',
+  platform: 'FILL_IN',
+  clientID: 'FILL_IN',
+  discoveryUrl: 'FILL_IN',
+  redirectUri: 'FILL_IN',
+  scope: 'FILL_IN',
+  logoutUrl: 'FILL_IN',
+  iosWebView: 'FILL_IN',
 };
 ```
 
@@ -199,12 +199,9 @@ The above is purely for demonstration purposes and should be modified to meet yo
 Given our run-time dependent options, we can make the change to `AuthenticationService` to call the right ones utilizing Capacitor:
 
 ```typescript title="src/app/services/authentication.service.ts"
-import { IonicAuth } from "@ionic-enterprise/auth";
-import {
-  nativeAuthOptions,
-  webAuthOptions,
-} from "../../environments/environment";
-import { Capacitor } from "@capacitor/core";
+import { IonicAuth } from '@ionic-enterprise/auth';
+import { nativeAuthOptions, webAuthOptions } from '../../environments/environment';
+import { Capacitor } from '@capacitor/core';
 
 export class AuthenticationService extends IonicAuth {
   constructor() {

@@ -1,7 +1,7 @@
 ---
-sidebar_label: "Overview"
+sidebar_label: 'Overview'
 sidebar_position: 1
-slug: "/"
+slug: '/'
 ---
 
 # Building Your First Ionic Enterprise Application

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Encrypting App Data"
+sidebar_label: 'Encrypting App Data'
 sidebar_position: 9
 ---
 
@@ -103,19 +103,19 @@ public async getDatabaseKey(): Promise<string> {
 The `get()` function within the `KeyService` will look as follows:
 
 ```typescript title="src/app/services/key.service.ts"
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class KeyService {
   // Generate an encryption key on the fly unique to the current app user
   // Reference: https://stackoverflow.com/a/2117523/180424
   async get(): Promise<string> {
     // generate a UUID v4
-    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
       const r = Math.random() * 16 || 0;
-      const v = c === "x" ? r : (r && 0x3) || 0x8;
+      const v = c === 'x' ? r : (r && 0x3) || 0x8;
       return v.toString(16);
     });
   }

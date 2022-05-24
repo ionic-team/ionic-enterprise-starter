@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Gating the App"
+sidebar_label: 'Gating the App'
 sidebar_position: 7
 ---
 
@@ -30,27 +30,18 @@ You will be prompted to choose your gaurd's interface. In this case we will go w
 After choosing our structure, the file is created with the function already in place:
 
 ```typescript title="src/app/guards/auth.guard.ts"
-import { Injectable } from "@angular/core";
-import {
-  ActivatedRouteSnapshot,
-  CanActivate,
-  RouterStateSnapshot,
-  UrlTree,
-} from "@angular/router";
-import { Observable } from "rxjs";
+import { Injectable } from '@angular/core';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
+import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class AuthGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
+  ): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return true;
   }
 }

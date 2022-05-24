@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Setup App Tabs"
+sidebar_label: 'Setup App Tabs'
 sidebar_position: 6
 ---
 
@@ -126,13 +126,13 @@ With those changes made, the default tab folders/files that were generated in th
 The `AccountPage` is what will show the logged in user's information, as well as house the ability to log out. We can quickly add some logic to initialize the `user` object via the `AuthenticationService`:
 
 ```typescript title="src/app/pages/account/account.page.ts"
-import { Component, OnInit } from "@angular/core";
-import { AuthenticationService } from "src/app/services/authentication.service";
+import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/services/authentication.service';
 
 @Component({
-  selector: "app-account",
-  templateUrl: "./account.page.html",
-  styleUrls: ["./account.page.scss"],
+  selector: 'app-account',
+  templateUrl: './account.page.html',
+  styleUrls: ['./account.page.scss'],
 })
 export class AccountPage implements OnInit {
   public user: any;
