@@ -1,39 +1,38 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "Ionic Enterprise Starter",
-  tagline:
-    "The foundation for your next enterprise cross-platform application.",
-  url: "https://ionic.io",
+  title: 'Ionic Enterprise Starter',
+  tagline: 'The foundation for your next enterprise cross-platform application.',
+  url: 'https://ionic.io',
   trailingSlash: false,
-  baseUrl: "/docs/enterprise-starter/",
+  baseUrl: '/docs/enterprise-starter/',
   baseUrlIssueBanner: false,
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon-32x32.png",
-  organizationName: "ionic-team",
-  projectName: "ionic-enterprise-starter",
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon-32x32.png',
+  organizationName: 'ionic-team',
+  projectName: 'ionic-enterprise-starter',
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "Ionic Enterprise Starter",
+        title: 'Ionic Enterprise Starter',
         logo: {
-          alt: "Ionic Logo",
+          alt: 'Ionic Logo',
           // src: "img/logo.svg",
-          src: "https://images.prismic.io/ionicframeworkcom/66cfdbef-e59d-463a-8e24-12cb233e9d97_ionic+logo+blue.png",
+          src: 'https://images.prismic.io/ionicframeworkcom/66cfdbef-e59d-463a-8e24-12cb233e9d97_ionic+logo+blue.png',
         },
         items: [
           {
-            type: "doc",
-            docId: "overview",
-            position: "left",
-            label: "Tutorial",
+            type: 'doc',
+            docId: 'overview',
+            position: 'left',
+            label: 'Tutorial',
           },
           // { to: "/blog", label: "Blog", position: "left" },
           // {
@@ -97,29 +96,25 @@ const config = {
         respectPrefersColorScheme: true,
       },
       tagManager: {
-        trackingID: "GTM-TKMGCBC",
+        trackingID: 'GTM-TKMGCBC',
       },
     }),
-  plugins: [
-    "@ionic-internal/docusaurus-plugin-tag-manager",
-    "docusaurus-plugin-sass",
-  ],
-  themes: ["@ionic-internal/docusaurus-theme"],
+  plugins: ['@ionic-internal/docusaurus-plugin-tag-manager', 'docusaurus-plugin-sass'],
+  themes: ['@ionic-internal/docusaurus-theme'],
   presets: [
     [
-      "@docusaurus/preset-classic",
+      '@docusaurus/preset-classic',
       {
         docs: {
-          routeBasePath: "/",
-          sidebarPath: require.resolve("./sidebars.js"),
+          routeBasePath: '/',
+          sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl:
-            "https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/",
+          editUrl: 'https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/',
         },
         blog: false,
         pages: false,
         theme: {
-          customCss: require.resolve("./src/css/custom.css"),
+          customCss: require.resolve('./src/css/custom.css'),
         },
       },
     ],

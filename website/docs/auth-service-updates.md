@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Auth Service Updates"
+sidebar_label: 'Auth Service Updates'
 sidebar_position: 11
 ---
 

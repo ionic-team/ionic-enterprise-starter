@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Deploy Your App"
+sidebar_label: 'Deploy Your App'
 sidebar_position: 12
 ---
 

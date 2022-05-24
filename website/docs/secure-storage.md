@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Securing App Data"
+sidebar_label: 'Securing App Data'
 sidebar_position: 8
 ---
 
@@ -59,15 +59,15 @@ ionic g service services/storage
 In the newly created service, we first initial the `storage` object and specify the order in which we prefer to use the storage drivers. Next, we will add logic to support storage natively on iOS and Android, as well as support for storage on the web and simple use cases.
 
 ```typescript title="src/app/services/storage.service.ts"
-import { Injectable } from "@angular/core";
-import { Capacitor } from "@capacitor/core";
-import IonicSecureStorageDriver from "@ionic-enterprise/secure-storage/driver";
-import { SQLite, SQLiteObject } from "@ionic-enterprise/secure-storage/ngx";
-import { Drivers } from "@ionic/storage";
-import { Storage } from "@ionic/storage-angular";
+import { Injectable } from '@angular/core';
+import { Capacitor } from '@capacitor/core';
+import IonicSecureStorageDriver from '@ionic-enterprise/secure-storage/driver';
+import { SQLite, SQLiteObject } from '@ionic-enterprise/secure-storage/ngx';
+import { Drivers } from '@ionic/storage';
+import { Storage } from '@ionic/storage-angular';
 
 @Injectable({
-  providedIn: "root",
+  providedIn: 'root',
 })
 export class StorageService {
   private storage: Storage;
@@ -75,11 +75,7 @@ export class StorageService {
 
   constructor(private ngStorage: Storage, private sqlite: SQLite) {
     this.storage = new Storage({
-      driverOrder: [
-        Drivers.SecureStorage,
-        Drivers.IndexedDB,
-        Drivers.LocalStorage,
-      ],
+      driverOrder: [Drivers.SecureStorage, Drivers.IndexedDB, Drivers.LocalStorage],
     });
 
     this.init();
@@ -94,22 +90,22 @@ export class StorageService {
       // Create or open a table
       try {
         const db = await this.sqlite.create({
-          name: "enterprisestarter.db", // The name of your database
-          location: "default",
+          name: 'enterprisestarter.db', // The name of your database
+          location: 'default',
           // Key/Password used to encrypt the database
           // Strongly recommended to use Identity Vault to manage this
-          key: "password",
+          key: 'password',
         });
 
         this.database = db;
 
         // Create our initial schema
         await db.executeSql(
-          "", // Example: 'CREATE TABLE IF NOT EXISTS software(name, company, type version)'
+          '', // Example: 'CREATE TABLE IF NOT EXISTS software(name, company, type version)'
           []
         );
       } catch (e) {
-        console.error("Unable to initialize database", e);
+        console.error('Unable to initialize database', e);
       }
     }
   }

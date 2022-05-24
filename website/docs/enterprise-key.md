@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Register Enterprise Key"
+sidebar_label: 'Register Enterprise Key'
 sidebar_position: 3
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Session Vault"
+sidebar_label: 'Session Vault'
 sidebar_position: 10
 ---
 

@@ -1,5 +1,5 @@
 ---
-sidebar_label: "Add a Login Page"
+sidebar_label: 'Add a Login Page'
 sidebar_position: 5
 ---
 
@@ -47,15 +47,11 @@ This is done by using a grid-type structure where the columns stack when the scr
         </ion-col>
         <ion-col size-md="9" size="12" class="welcome">
           <ion-card-header>
-            <ion-card-title>
-              Welcome to Ionic Enterprise Starter
-            </ion-card-title>
+            <ion-card-title> Welcome to Ionic Enterprise Starter </ion-card-title>
           </ion-card-header>
 
           <ion-card-content>
-            <ion-button (click)="login()" shape="round" color="primary">
-              Sign in
-            </ion-button>
+            <ion-button (click)="login()" shape="round" color="primary"> Sign in </ion-button>
           </ion-card-content>
         </ion-col>
       </ion-row>
