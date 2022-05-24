@@ -21,7 +21,7 @@ Let's walk through the steps together.
 
 Appflow works directly with Git version control and uses your code base as the source of truth for Deploy and Package builds. In order for Appflow to access your code, you can choose to integrate directly using a hosting service like GitHub or Bitbucket, or you can push your code directly to Appflow.
 
-If you did not connect your app's repo in [earlier part of the tutorial](/docs/enterprise-key#import-your-app), now is the time to do so. In the [Appflow Dashboard](https://dashboard.ionicframework.com) ensure you've created your new app and connected to it's git repo. More details can be found within the [Appflow Quickstart](https://ionic.io/docs/appflow/quickstart/connect), if needed.
+If you did not connect your app's repo in [earlier part of the tutorial](/enterprise-key#import-your-app), now is the time to do so. In the [Appflow Dashboard](https://dashboard.ionicframework.com) ensure you've created your new app and connected to it's git repo. More details can be found within the [Appflow Quickstart](https://ionic.io/docs/appflow/quickstart/connect), if needed.
 
 ## Install the Appflow SDK
 

@@ -10,37 +10,14 @@ const config = {
   tagline:
     "The foundation for your next enterprise cross-platform application.",
   url: "https://ionic.io",
-  baseUrl: "/",
+  trailingSlash: false,
+  baseUrl: "/docs/enterprise-starter/",
+  baseUrlIssueBanner: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon-32x32.png",
   organizationName: "ionic-team",
   projectName: "ionic-enterprise-starter",
-
-  presets: [
-    [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          editUrl:
-            "https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/",
-        },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        // },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      }),
-    ],
-  ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -114,8 +91,39 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: [],
+      },
+      colorMode: {
+        respectPrefersColorScheme: true,
+      },
+      tagManager: {
+        trackingID: "GTM-TKMGCBC",
       },
     }),
+  plugins: [
+    "@ionic-internal/docusaurus-plugin-tag-manager",
+    "docusaurus-plugin-sass",
+  ],
+  themes: ["@ionic-internal/docusaurus-theme"],
+  presets: [
+    [
+      "@docusaurus/preset-classic",
+      {
+        docs: {
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          editUrl:
+            "https://github.com/ionic-team/ionic-enterprise-starter/tree/main/website/",
+        },
+        blog: false,
+        pages: false,
+        theme: {
+          customCss: require.resolve("./src/css/custom.css"),
+        },
+      },
+    ],
+  ],
 };
 
 module.exports = config;
