@@ -10,7 +10,8 @@ const config = {
   tagline:
     "The foundation for your next enterprise cross-platform application.",
   url: "https://ionic.io",
-  baseUrl: "/",
+  baseUrl: "/docs/enterprise-starter/",
+  baseUrlIssueBanner: false,
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon-32x32.png",
