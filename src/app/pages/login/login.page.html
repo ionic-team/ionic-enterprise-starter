@@ -23,9 +23,42 @@
             <div class="ion-padding">
               <p class="error">{{errorMessage}}</p>
             </div>
+
+            <ion-icon
+              id="trigger-icon"
+              name="information-circle-outline"
+              size="large"
+              color="primary"
+            >
+            </ion-icon>
           </ion-card-content>
         </ion-col>
       </ion-row>
     </ion-card>
   </div>
 </ion-content>
+
+<ion-modal
+  trigger="trigger-icon"
+  [breakpoints]="[0, 0.2, 0.5, 1]"
+  [initialBreakpoint]="0.2"
+>
+  <ng-template>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <ion-label>
+            <h2>Username</h2>
+            <p>user@enterprise.com</p>
+          </ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            <h2>Password</h2>
+            <p>ionic</p>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ng-template>
+</ion-modal>

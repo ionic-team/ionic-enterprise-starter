@@ -4,15 +4,15 @@
   "author": "Ionic",
   "homepage": "https://ionic.io/",
   "scripts": {
-    "prestart": "node ./scripts/index.js",
     "prebuild": "ENVIRONMENT='production' node ./scripts/index.js",
+    "prebuild:dev": "node ./scripts/index.js",
     "build": "ionic build --configuration production",
     "build:dev": "ionic build",
-    "prebuild:dev": "node ./scripts/index.js",
     "appflow:build": "ENVIRONMENT='production' node ./scripts/index.js && npx cap-config run appflow.yml -y && ng build --configuration production",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "ng": "ng",
+    "prestart": "node ./scripts/index.js",
     "start": "ionic serve --external",
     "test": "ng test"
   },
