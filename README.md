@@ -10,6 +10,10 @@ Ionic Enterprise Starter is a showcase app of Ionic App Platform technologies, i
 
 To log into Ionic Enterprise Starter, use username **user@enterprise.com** and password: **ionic**.
 
+## Tutorial
+
+Want to see how the Ionic Enterprise Starter was made? [Follow along the step-by-step tutorial](https://ionic.io/docs/enterprise-starter).
+
 ## Tech Details
 
 - Native runtime: [Capacitor 3](https://capacitorjs.com)
