@@ -5,8 +5,6 @@ sidebar_position: 4
 
 # Single sign-on with Auth Connect
 
-~_Insert Video of connecting Login Page to Auth Connect_~
-
 Auth Connect makes it easy to add single sign-on and secure authentication to your app. The hard work of setting up the infrastructure to login, logout, and utilize token refresh for every platform using OpenID Connect is all done for you! When paired with Identity Vault, the authentication and storage of logged-in credentials becomes completely secure.
 
 We will soon talk about configuring Identity Vault into your application, but first we have to dive into just the authentication process. Auth Connect supports many popular auth providers, such as Auth0, AWS Cognito, Azure AD, and more! Auth0 will be our auth provider of choice for this demonstration.
