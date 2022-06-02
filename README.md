@@ -24,7 +24,7 @@ Want to see how the Ionic Secure Solutions Starter was made? [Follow along the s
 ## How to Run
 > Note: Installing and running this app requires a subscription to the [Ionic Standard or Ionic Enterprise plans](https://ionic.io/pricing).
 
-__Want to try Ionic's native solutions in your app?__ [Sign up for a free trial](https://dashboard.ionicframework.com/personal/apps?native_trial=1).
+__Want to try Ionic's Secure Solutions in your app?__ [Sign up for a free trial](https://dashboard.ionicframework.com/personal/apps?native_trial=1).
 
 - Install the Ionic CLI: `npm install -g @ionic/cli`
 - Clone this repository: `git clone https://github.com/ionic-team/ionic-enterprise-starter.git`
