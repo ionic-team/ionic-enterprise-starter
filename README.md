@@ -1,6 +1,6 @@
 # Ionic Secure Solutions Starter
 
-A showcase app of Ionic App Platform technologies, including [Ionic Framework](https://ionicframework.com), [Capacitor](https://capacitorjs.com), [Appflow](https://ionic.io/appflow), and [Ionic Secure Solutions solutions](https://ionic.io/docs).
+A showcase app of Ionic App Platform technologies, including [Ionic Framework](https://ionicframework.com), [Capacitor](https://capacitorjs.com), [Appflow](https://ionic.io/appflow), and [Ionic Secure Solutions solutions](https://go.ionic.io/ionic-enterprise-free-trial).
 
 | <img src="https://user-images.githubusercontent.com/7469758/169586741-dddafdde-b328-4ba2-93e0-064219de9dc0.PNG" width="350" alt="Ionic Secure Solutions Starter Login Page Screenshot on iOS" /> | <img src="https://user-images.githubusercontent.com/7469758/169586745-2dcfb155-f1d6-4b21-a16f-7a8863273328.PNG" width="350" alt="Ionic Secure Solutions Starter Account Page Screenshot on iOS" /> | 
 |:---:|:---:|
