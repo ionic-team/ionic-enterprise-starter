@@ -1,28 +1,28 @@
-# Ionic Enterprise Starter
+# Ionic Secure Solutions Starter
 
-Ionic Enterprise Starter is a showcase app of Ionic App Platform technologies, including [Ionic Framework](https://ionicframework.com), [Capacitor](https://capacitorjs.com), [Appflow](https://ionic.io/appflow), and [Ionic Enterprise solutions](https://ionic.io/docs).
+A showcase app of Ionic App Platform technologies, including [Ionic Framework](https://ionicframework.com), [Capacitor](https://capacitorjs.com), [Appflow](https://ionic.io/appflow), and [Ionic Secure Solutions solutions](https://ionic.io/docs).
 
-| <img src="https://user-images.githubusercontent.com/7469758/169586741-dddafdde-b328-4ba2-93e0-064219de9dc0.PNG" width="350" alt="Ionic Enterprise Starter Login Page Screenshot on iOS" /> | <img src="https://user-images.githubusercontent.com/7469758/169586745-2dcfb155-f1d6-4b21-a16f-7a8863273328.PNG" width="350" alt="Ionic Enterprise Starter Account Page Screenshot on iOS" /> | 
+| <img src="https://user-images.githubusercontent.com/7469758/169586741-dddafdde-b328-4ba2-93e0-064219de9dc0.PNG" width="350" alt="Ionic Secure Solutions Starter Login Page Screenshot on iOS" /> | <img src="https://user-images.githubusercontent.com/7469758/169586745-2dcfb155-f1d6-4b21-a16f-7a8863273328.PNG" width="350" alt="Ionic Secure Solutions Starter Account Page Screenshot on iOS" /> | 
 |:---:|:---:|
 | [Login Page](https://github.com/ionic-team/ionic-enterprise-starter/tree/main/src/app/pages/login) | [Account Page](https://github.com/ionic-team/ionic-enterprise-starter/tree/main/src/app/pages/account) |
 
 ## Try the App
 
-To log into Ionic Enterprise Starter, use username **user@enterprise.com** and password: **ionic**.
+To log into Ionic Secure Solutions Starter, use username **user@enterprise.com** and password: **ionic**.
 
 ## Tutorial
 
-Want to see how the Ionic Enterprise Starter was made? [Follow along the step-by-step tutorial](https://ionic.io/docs/enterprise-starter).
+Want to see how the Ionic Secure Solutions Starter was made? [Follow along the step-by-step tutorial](https://ionic.io/docs/enterprise-starter).
 
 ## Tech Details
 
 - Native runtime: [Capacitor 3](https://capacitorjs.com)
 - Frameworks: Ionic Framework 6 and Angular 13
 - Capacitor Core plugins
-- Ionic Enterprise solutions: [Auth Connect](https://ionic.io/products/auth-connect), [Identity Vault](https://ionic.io/products/identity-vault), [Secure Storage](https://ionic.io/products/secure-storage)
+- Ionic Secure Solutions: [Auth Connect](https://ionic.io/products/auth-connect), [Identity Vault](https://ionic.io/products/identity-vault), [Secure Storage](https://ionic.io/products/secure-storage)
 
 ## How to Run
-> Note: Installing and running this app requires a subscription to [Ionic Enterprise](https://ionicframework.com/enterprise). For details, pricing info, and a live demo, please reach out [here](https://ionic.io/contact/sales).
+> Note: Installing and running this app requires a subscription to the [Ionic Standard or Ionic Enterprise plans](https://ionic.io/pricing).
 
 __Want to try Ionic's native solutions in your app?__ [Sign up for a free trial](https://dashboard.ionicframework.com/personal/apps?native_trial=1).
 
