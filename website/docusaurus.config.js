@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Ionic Enterprise Starter',
+  title: 'Ionic Secure Solutions Starter',
   tagline: 'The foundation for your next enterprise cross-platform application.',
   url: 'https://ionic.io',
   trailingSlash: false,
@@ -21,7 +21,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Ionic Enterprise Starter',
+        title: 'Ionic Secure Solutions Starter',
         logo: {
           alt: 'Ionic Logo',
           // src: "img/logo.svg",

@@ -47,7 +47,7 @@ This is done by using a grid-type structure where the columns stack when the scr
         </ion-col>
         <ion-col size-md="9" size="12" class="welcome">
           <ion-card-header>
-            <ion-card-title> Welcome to Ionic Enterprise Starter </ion-card-title>
+            <ion-card-title> Welcome to Ionic Secure Solutions Starter </ion-card-title>
           </ion-card-header>
 
           <ion-card-content>

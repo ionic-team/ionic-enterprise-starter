@@ -1,7 +1,7 @@
 {
-  "name": "Ionic Enterprise Starter",
+  "name": "Ionic Secure Solutions Starter",
   "baseref": "main",
-  "welcome": "Welcome to the \u001b[34m\u001b[1mIonic\u001b[22m\u001b[39m Enterprise Starter!\n\nFor more details, please see the project's README: \u001b[1mhttps://github.com/ionic-team/ionic-enterprise-starter/blob/main/README.md\u001b[22m",
+  "welcome": "Welcome to the \u001b[34m\u001b[1mIonic\u001b[22m\u001b[39m Secure Solutions Starter!\n\nFor more details, please see the project's README: \u001b[1mhttps://github.com/ionic-team/ionic-enterprise-starter/blob/main/README.md\u001b[22m",
   "packageJson": {
     "scripts": {
       "prestart": "node ./scripts/index.js",
