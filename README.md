@@ -16,8 +16,8 @@ Want to see how the Ionic Secure Solutions Starter was made? [Follow along the s
 
 ## Tech Details
 
-- Native runtime: [Capacitor 3](https://capacitorjs.com)
-- Frameworks: Ionic Framework 6 and Angular 13
+- Native runtime: [Capacitor 4](https://capacitorjs.com)
+- Frameworks: Ionic Framework 6 and Angular 14
 - Capacitor Core plugins
 - Ionic Secure Solutions: [Auth Connect](https://ionic.io/products/auth-connect), [Identity Vault](https://ionic.io/products/identity-vault), [Secure Storage](https://ionic.io/products/secure-storage)
 
