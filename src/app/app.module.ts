@@ -16,21 +16,20 @@ const appInitFactory =
     sessionVault.init();
 
 @NgModule({
-  declarations: [AppComponent],
-  entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
-  providers: [
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    SQLite,
-    {
-      provide: APP_INITIALIZER,
-      useFactory: appInitFactory,
-      deps: [SessionVaultService],
-      multi: true,
-    },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: UnauthInterceptor, multi: true },
-  ],
-  bootstrap: [AppComponent],
+    declarations: [AppComponent],
+    imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+    providers: [
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+        SQLite,
+        {
+            provide: APP_INITIALIZER,
+            useFactory: appInitFactory,
+            deps: [SessionVaultService],
+            multi: true,
+        },
+        { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: UnauthInterceptor, multi: true },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {}
