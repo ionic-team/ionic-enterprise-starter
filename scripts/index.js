@@ -2,7 +2,6 @@ const writeFile = require("fs").writeFileSync;
 
 require("dotenv").config();
 const auth0ClientID = process.env.AUTH0_CLIENT_ID;
-const auth0ClientSecret = process.env.AUTH0_CLIENT_SECRET;
 const auth0Domain = process.env.AUTH0_DOMAIN;
 
 const isProd = process.env.ENVIRONMENT === "production" ? true : false;
@@ -19,7 +18,6 @@ const envConfigFile = `
     authConfig: 'auth0' as 'auth0',
     clientID: '${auth0ClientID}',
     discoveryUrl: 'https://${auth0Domain}/.well-known/openid-configuration',
-    clientSecret: '${auth0ClientSecret}',
     scope: 'openid offline_access email picture profile',
     audience: '',
   };
