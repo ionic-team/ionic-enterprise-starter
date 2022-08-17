@@ -168,7 +168,6 @@ const authOptions = {
   authConfig: "auth0" as "auth0",
   clientID: "YOUR_AUTH0_CLIENT_ID",
   discoveryUrl: "https://YOUR_AUTH0_DOMAIN/.well-known/openid-configuration",
-  clientSecret: "YOUR_AUTH0_CLIENT_SECRET",
   scope: "openid offline_access email picture profile",
   audience: "",
 };
