@@ -33,7 +33,7 @@
     "@capacitor/status-bar": "4.0.1",
     "@ionic-enterprise/auth": "3.9.5",
     "@ionic-enterprise/identity-vault": "5.9.2",
-    "@ionic-enterprise/secure-storage": "2.3.2",
+    "@ionic-enterprise/secure-storage": "2.3.3",
     "@ionic/angular": "6.2.3",
     "@ionic/storage-angular": "^3.0.6",
     "cordova-plugin-ionic": "5.5.2",
