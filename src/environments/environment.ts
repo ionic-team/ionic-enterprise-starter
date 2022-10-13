@@ -4,7 +4,7 @@
 
 import { IonicAuthOptions } from '@ionic-enterprise/auth';
 
-const authOptions = {
+const auth0Config = {
   authConfig: 'auth0' as 'auth0',
   clientID: 'YOUR_AUTH0_CLIENT_ID',
   discoveryUrl: 'https://YOUR_AUTH0_DOMAIN/.well-known/openid-configuration',
@@ -12,16 +12,16 @@ const authOptions = {
   audience: '',
 };
 
-export const nativeAuthOptions: IonicAuthOptions = {
-  ...authOptions,
+export const auth0NativeConfig: IonicAuthOptions = {
+  ...auth0Config,
   redirectUri: 'myEnterpriseApp://callback',
   logoutUrl: 'myEnterpriseApp://login',
   platform: 'capacitor',
   iosWebView: 'private',
 };
 
-export const webAuthOptions: IonicAuthOptions = {
-  ...authOptions,
+export const auth0WebConfig: IonicAuthOptions = {
+  ...auth0Config,
   redirectUri: 'http://app.enterprise.com/callback',
   logoutUrl: 'http://app.enterprise.com/login',
   platform: 'web',
