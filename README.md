@@ -22,7 +22,8 @@ Want to see how the Ionic Secure Solutions Starter was made? [Follow along the s
 - Ionic Secure Solutions: [Auth Connect](https://ionic.io/products/auth-connect), [Identity Vault](https://ionic.io/products/identity-vault), [Secure Storage](https://ionic.io/products/secure-storage)
 
 ## How to Run
-> Note: Installing and running this app requires an Ionic Enterprise Native key from a [Ionic Standard or Ionic Enterprise subscription or trial](https://ionic.io/pricing), as well as an Auth0 App. 
+> Note: Installing and running this app requires an Ionic Enterprise Native key from a [Ionic Standard or Ionic Enterprise subscription or trial](https://ionic.io/pricing). 
+To use authentication, an Auth0 App is required. 
 
 
 __Want to try Ionic's Secure Solutions in your app?__ [Sign up for a free trial](https://dashboard.ionicframework.com/personal/apps?native_trial=1&utm_medium=referral&utm_source=git_hub&utm_campaign=is3_native_trial).
@@ -30,10 +31,13 @@ __Want to try Ionic's Secure Solutions in your app?__ [Sign up for a free trial]
 - Install the Ionic CLI: `npm install -g @ionic/cli`
 - Clone this repository: `git clone https://github.com/ionic-team/ionic-enterprise-starter.git`
 - Navigate to repo in a terminal: `cd ionic-enterprise-starter`
-- Add an Ionic Enterprise Native key into your `.bash_profile` file or as an Environment Variable on Windows: `export ENT_NATIVE_KEY="key_4e9d5..."`
-  - You can find your key under Native Solutions > Auth Connect > Get Started after creating an app in your [Ionic Hub](https://dashboard.ionicframework.com/). More details [here](https://ionic.io/docs/enterprise-starter/enterprise-key).
+- Add an Ionic Enterprise Native key as an Environment Variable using your preferred method:
+  - Add to Bash or Zsh configuration file
+  - Set in terminal with `export ENT_NATIVE_KEY="key_4e9d5..."`
+  - You can find your key in your [Ionic Hub](https://dashboard.ionicframework.com/) under "Native Plugin Keys" (Native Solutions > Auth Connect > Get Started for personal accounts). More details [here](https://ionic.io/docs/enterprise-starter/enterprise-key).
 - Install dependencies (this will fail if you don't have an Ionic Enterprise Native key): `npm i`
-- Set up your local environment file: `npm run prebuild:dev`
-- Update the `clientID` and domain within the `discoveryURL` in the `auth0Config` in your `environment.ts` file using your Auth0 App details. More details [here](https://ionic.io/docs/enterprise-starter/auth-connect#setup-auth-configs-in-the-app).
+- OPTIONAL: Update the `clientID` and domain within the `discoveryURL` in the `auth0Config` in your `environment.ts` file using your Auth0 App details.
+  - If you have `AUTH0_CLIENT_ID` and `AUTH0_DOMAIN` set as environment variables locally, you can run `npm run prebuild:dev` to update the file automatically. 
+  - This is required to log in to the app. More details [here](https://ionic.io/docs/enterprise-starter/auth-connect#setup-auth-configs-in-the-app).
 - Run locally in a browser: `ionic serve`
 - Deploy to a mobile device: See details [here](https://capacitorjs.com/docs/basics/workflow#testing-your-capacitor-app).
